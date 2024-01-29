@@ -57,17 +57,17 @@ public class VariableEx2 {
 		float num6 = 3.14f;
 		
 		// 		(long) 20L + (float) 3.14f
-		// -> (float) 20.0f + (float0 3.14f
+		// -> (float) 20.0f + (float) 3.14f
 		
 		//		(double) result3 = (float) 23.14f
 		// ->	(double) result3 = (double) 23.14
 		
 		double result3 = num5 + num6;
 		
-		System.out.println("result3 :" result3);
+		System.out.println("result3 :"+ result3);
 		
 		// (참고)
-		// double, float 는 실수를 근하치로 표현한 자료형
+		// double, float 는 실수를 근사치로 표현한 자료형
 		// -> 정확하지 않다!! (부동 소수점의 문제)
 		// -> 은행이나 숫자에 민간함 프로젝트 사용 X
 		

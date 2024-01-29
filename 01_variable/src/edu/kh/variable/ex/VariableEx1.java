@@ -99,8 +99,6 @@ public class VariableEx1 {
 		 String str1 = "쌍따옴표가 Sting 리터럴 표기법";
 		 
 		 
-		 
-		 
 		
 		
 		

@@ -40,7 +40,7 @@ public class VariableEx3 {
 		
 		/* 난수 + 강제형변환 */
 		// 난수 :   Math.random();
-		// -> 0.0 <= x < 1.0
+		// 		-> 0.0 <= x < 1.0
 		
 		// 1~10 사이 난수
 		int random = (int)(Math.random() * 10 + 1);
