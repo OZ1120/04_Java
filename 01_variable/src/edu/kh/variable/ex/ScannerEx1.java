@@ -33,6 +33,9 @@ public class ScannerEx1 {
 		
 		// 2. import한 Scanner 클래스를 이용해서
 		//		Scanner 객체 생성
+		
+		// *System.in : (이클립스) 키보드
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수 입력 1 : ");
@@ -75,7 +78,7 @@ public class ScannerEx1 {
 		
 		
 
-		System.out.printf("%d, \t\t %d, %f, %s, %s, %s \\ \" \' \n", 
+		System.out.printf("%d, \t\t %d, %f, %s, %s, %s \n", 
 										num1, num2, num3, word1, word2, str);
 		
 		

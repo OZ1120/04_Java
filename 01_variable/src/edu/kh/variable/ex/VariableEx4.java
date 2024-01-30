@@ -2,7 +2,7 @@ package edu.kh.variable.ex;
 
 public class VariableEx4 {
 
-		// 메인 메서드 : 자바 프로그램 실해용 구문(기능)
+		// 메인 메서드 : 자바 프로그램 실행용 구문(기능)
 		public static void main(String[] args) {
 		
 		// 상수 : 한번 값을 기록하면 값을 바꿀수 없는 변수
@@ -16,8 +16,8 @@ public class VariableEx4 {
 			final int MIN =0;
 			final int MAX = 100 ;
 			
-			System.out.println("최소값 ;" + MIN);
-			System.out.println("최소값 ;" + MAX);
+			System.out.println("최소값 : " + MIN);
+			System.out.println("최소값 : " + MAX);
 			
 			
 			
