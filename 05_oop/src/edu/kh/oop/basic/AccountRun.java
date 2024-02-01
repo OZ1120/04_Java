@@ -11,7 +11,7 @@ public class AccountRun {
 		
 
 		
-		// private을 적용한 변수(필드)는 외부에서 보이지 않음(정보은닉0
+		// private을 적용한 변수(필드)는 외부에서 보이지 않음(정보은닉)
 		// he field Account.password is not visible
 		
 //		a1.accountNumber = "1234";

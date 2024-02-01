@@ -22,7 +22,7 @@ public class Nation {
 		System.out.print("가나다라 한국어 가능");
 	}
 	public void welfare() {
-		System.out.println("우리나라세어 제공하는 복지를 누리;ㄹ 수 있음");
+		System.out.println("우리나라에서 제공하는 복지를 누릴 수 있음");
 	}
 	
 	public void 납세의의무() {

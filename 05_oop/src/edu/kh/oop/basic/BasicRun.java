@@ -9,7 +9,7 @@ public class BasicRun {
 		//		heap 영역에 할당 하는것
 		Nation n1 = new Nation();	
 		
-		// 점, 하위 접근 연산다(.)
+		// 점, 하위 접근 연산자(.)
 		// - 객체의 속성/ 기능을 접근, 호출, 실행 시키는 연산자
 		
 		n1.name = "홍길동";
