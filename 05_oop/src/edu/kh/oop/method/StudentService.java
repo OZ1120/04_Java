@@ -69,8 +69,14 @@ public class StudentService {
 				else									updateStudentName(std2);
 				
 				break;
-			case 4 : break;
-			case 5 : break;
+			case 4 :
+				System.out.print("Java 역량을 수정할 학생 선택(1:std1 / 2:std2) : ");
+				
+				if(sc.nextInt( )== 1) updateJava(std1);
+				else									updateJava(std2);
+				break;
+			case 5 :
+				break;
 			case 6 : break;
 			case 7 : break;
 			case 0 : System.out.println("==== 프로그램 종료 ===="); break;
@@ -143,6 +149,35 @@ public class StudentService {
 	}
 	
 	
+	/**Java 역량이 얼마나 증가 또는 감소했는지 정수로 입력 받고
+	 * 학생의 Java 역량을 수정
+	 * 단, 수정된 Java 역량은 최대값, 최소값 범위를 넘어가지 못하게함
+	 * 
+	 * ex) Java 역량이 120인 경우  100(최대값)
+	 *     Java 역량이 -30인 경우    0(최소값)
+	 * @param s : std1 또는 std2 (학생 객체 주소)
+	 */
+	private void updateJava(Student s) {
+		
+		
+		
+		// [결과 출력 예시]
+		// Java 역량 수정 완료
+		// 70 -> 80 (10)
+		
+		// [결과 출력 예시]
+		// Java 역량 수정 완료
+		// 70 -> 30 (-40)
+		
+		// [결과 출력 예시]
+		// Java 역량 수정 완료
+		// 50 -> 100 (100)   	//최대값 범위 초과X
+		
+		// [결과 출력 예시]
+		// Java 역량 수정 완료
+		// 50 -> 0 (-100)  	  //최소값 범위 초과X
+		
+	}
 	
 
 }
