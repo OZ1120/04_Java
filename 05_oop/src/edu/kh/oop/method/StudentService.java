@@ -81,8 +81,17 @@ public class StudentService {
 				if(sc.nextInt()==1) updateHtml(std1);
 				else								updateHtml(std2);
 				break;
-			case 6 : break;
-			case 7 : break;
+				
+			case 6 :
+				String result = compareJava(std1, std2);
+				System.out.println(result);
+				break;
+				
+			case 7 : 
+				String result2 = compareHtml(std1, std2);
+				System.out.println(result2);
+				break;
+			
 			case 0 : System.out.println("==== 프로그램 종료 ===="); break;
 			default : 
 			
@@ -209,6 +218,71 @@ public class StudentService {
 		System.out.println("HTML 역량 수정 완료");
 		System.out.printf("%d -> %d (%d) \n", before, s.getHtml(), input);
 	}
+	
+	
+	/** 매개 변수로 전달 받은 두 Student의 Java 점수 비교
+	 * @param s1
+	 * @param s2
+	 * @return 결과 문자열
+	 */
+	private String compareJava(Student s1, Student s2) {
+		
+		// 전달 받은 s1이 참조하는 Student 객체가 없을 경우
+		if(s1 == null) {
+			return "첫 번째 학생이 등록되지 않았습니다.";
+		}
+		if(s2 == null) {
+			return "두 번째 학생이 등록되지 않았습니다.";
+		}
+		
+		String result = String.format("%s : %d / %s : %d \n",
+																	s1.getName(), s1.getJava(),s2.getName(),  s2.getJava());
+		
+		// 두 학생의 점수 비교
+		if(s1.getJava() > s2.getJava()) {
+			return result + s1.getName() + "의 점수가 더 높습니다.";
+		}
+		if(s1.getJava() < s2.getJava()) {
+			return result + s2.getName() + "std2의 점수가 더 높습니다.";
+		}
+		
+		return result + "점수가 같습니다.";
+	}
+	
+	
+	private String compareHtml(Student s1, Student s2) {
+		
+		if(s1 == null) {
+			return "첫 번째 학생이 등록되지 않았습니다.";
+		}
+		if(s2 == null) {
+			return "두 번째 학생이 등록되지 않았습니다.";
+		}
+		
+		String result = String.format("%s : %d / %s : %d \n", 
+																	s1.getName(), s1.getHtml(), s2.getName(), s2.getHtml());
+
+		if(s1.getJava() > s2.getHtml()) {
+			return result + s1.getName() + "의 점수가 더 높습니다.";
+		}
+		if(s1.getJava() < s2.getHtml()) {
+			return result + s2.getName() + "std2의 점수가 더 높습니다.";
+		}
+		
+		return result + "점수가 같습니다.";
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
