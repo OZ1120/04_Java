@@ -6,6 +6,12 @@ import edu.kh.oarr.model.dto.Student;
 import edu.kh.oarr.model.service.StudentService;
 
 // 입력, 출력을 담당하는 클래스(객체의 속성, 기능 정의)
+/**
+ * 
+ */
+/**
+ * 
+ */
 public class StudentView {
 	
 	// 필드 (객체의 속성, 멤버변수)
@@ -45,9 +51,12 @@ public class StudentView {
 			
 			case 4: selectName();  break;
 			
-			case 5: break;
-			case 6: break;
-			case 7: break;
+			case 5: updateStudent();  break;
+			
+			case 6: selectScore();	break;
+			
+			case 7: selectMaxMin();	break;
+			
 			case 0: System.out.println("[프로그램 종료]");   break;
 			default : System.out.println("[잘못 입력]");
 			}
@@ -186,10 +195,92 @@ public class StudentView {
 	
 	
 	
+	/**
+	 * 인덱스를 먼저 입력 받아
+	 * 해당 인덱스에 학생이 존재하면
+	 * 
+	 *  HTML, CSS, JS, Java 점수를 입력 받아
+	 *  해당 학생에게 세팅(set)
+	 */
+	private void updateStudent() {
+		
+		System.out.println("\n----- 학생 정보 수정(점수) -----");
+		
+		System.out.print("수정할 학생의 인덱스 번호 입력 : ");
+		int index = sc.nextInt();
+
+		
+		Student std = service.selectIndex(index);
+		
+		if(std == null ) {
+			System.out.println("해당 인덱스에 학생이 존재하지 않습니다");
+			return;
+		}
+
+		// HTML,CSS , JS, Java 접수 입력 받아 바로 std에 세팅
+		System.out.print("HTML, CSS, JS, Java 순서로 입력 : ");
+		std.setHtml(sc.nextInt());
+		std.setCss(sc.nextInt());
+		std.setJs(sc.nextInt());
+		std.setJava(sc.nextInt());
+		
+		System.out.println("수정 완료");
+		
+		
+		
+	}
 	
 	
 	
+	/** 학생 점수 조회 (각각의 점수, 합계, 평균)
+	 * 
+	 * 1) 인덱스를 입력 받아 해당 학생이 존재하는지 확인
+	 * 
+	 * 2) 있을 경우 
+	 * 		service.selectScore(인덱스)를 호출한 후
+	 * 
+	 * 		HTML(50) CSS(80) JS(100) Java(300)
+	 * 		합계 : 280
+	 * 		평균 : 70.0
+	 * 
+	 * 		형태의 문자열로 반환 받아와서 출력
+	 * 
+	 */
+	private void selectScore() {
+		
+		System.out.println("\n----- 학생 점수 조회 -----");
+		System.out.print("조회할 학생의 인덱스 번호 입력 : ");
+		int index = sc.nextInt();
+		
+		Student std = service.selectIndex(index);
 	
+		
+		if(std == null) {
+			System.out.println("해당 인덱스에 학생이 존재하지 않습니다");
+			return;
+		}
+		
+		String result = service.selectScore(index);
+		System.out.println(result);
+	
+		
+	}
+	
+	
+	/**
+	 * 평균 최고점, 최저점 학생 조회 하기
+	 */
+	private void selectMaxMin() {
+		
+		System.out.println("\n----- 평균 최고점, 최저점 학생 조회 하기 -----");
+		
+		String result = service.selectMaxMin();
+		
+		System.out.println(result);
+		
+		
+		
+	}
 	
 	
 	
@@ -197,3 +288,7 @@ public class StudentView {
 	
 	
 }
+
+
+
+
