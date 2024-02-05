@@ -66,8 +66,8 @@ public class ArrayEx1 {
 		// 2) 인덱스를 이용한 초기화
 		arr[0] = 100;
 		arr[1] = 2000;
-		arr[2]= 9;
-		arr[3]=7777;
+		arr[2] = 9;
+		arr[3] = 7777;
 		
 		System.out.println("초기화 후");
 		
