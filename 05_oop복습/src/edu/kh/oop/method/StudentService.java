@@ -62,7 +62,7 @@ public class StudentService {
 		System.out.println("학번 : ");
 		String studentNumber = sc.next();
 		System.out.println("성별 : ");
-		char gender = sc.next().charAt(1);
+		char gender = sc.next().charAt(0);
 		
 		return new Student(name, studentNumber, gender);
 		

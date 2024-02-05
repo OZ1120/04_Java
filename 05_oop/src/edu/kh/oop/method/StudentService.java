@@ -18,7 +18,7 @@ public class StudentService {
 		
 		// 학생 객체를 참조할 참조형 변수 2개 선언
 		// (null : 참조하는 객체가 없음)
-		Student std1 = null;
+		Student std1 = new Student("홍길동", "112233", '남');
 		Student std2 = null;
 		
 		// do ~ while : 최소 1회 이상 반복
@@ -76,6 +76,10 @@ public class StudentService {
 				else									updateJava(std2);
 				break;
 			case 5 :
+				System.out.print("HTML 역량을 수정할 학생 선택(1:std1 / 2:std2) : ");
+				
+				if(sc.nextInt()==1) updateHtml(std1);
+				else								updateHtml(std2);
 				break;
 			case 6 : break;
 			case 7 : break;
@@ -159,6 +163,19 @@ public class StudentService {
 	 */
 	private void updateJava(Student s) {
 		
+		System.out.print("증가 또는 감소한 Java 역량 입력(정수) : ");
+		int input = sc.nextInt();
+		
+		// 이전 점수 + 입력받은 점수를 전달 받은 학생에게 세팅
+		int before = s.getJava();
+		s.setJava(before +   input);
+		
+		// 점수가 최대/최소 값을 넘지 못하게 처리
+		if(s.getJava() > Student.MAX_VALUE) s.setJava(Student.MAX_VALUE);
+		if(s.getJava() < Student.MIN_VALUE) s.setJava(Student.MIN_VALUE);		
+		
+		System.out.println("Java 역량 수정 완료");
+		System.out.printf("%d -> %d (%d) \n", before, s.getJava(), input);
 		
 		
 		// [결과 출력 예시]
@@ -176,7 +193,21 @@ public class StudentService {
 		// [결과 출력 예시]
 		// Java 역량 수정 완료
 		// 50 -> 0 (-100)  	  //최소값 범위 초과X
+	}
+	
+	private void updateHtml(Student s) {
 		
+		System.out.print("증가 또는 감소한 HTML역량 입력(정수) : ");
+		int input = sc.nextInt();
+		
+		int before = s.getHtml();
+		s.setHtml(before + input);
+
+		if(s.getHtml() > Student.MAX_VALUE) s.setHtml(Student.MAX_VALUE);
+		if(s.getHtml() < Student.MIN_VALUE) s.setHtml(Student.MIN_VALUE);	
+		
+		System.out.println("HTML 역량 수정 완료");
+		System.out.printf("%d -> %d (%d) \n", before, s.getHtml(), input);
 	}
 	
 
