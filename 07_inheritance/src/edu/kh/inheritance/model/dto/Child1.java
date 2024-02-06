@@ -15,11 +15,21 @@ public class Child1 extends Parent{
 	// 기본 생성자
 	public Child1() {
 		
+		/* super() : super 생성자 / 부모 생성자*/
+		// - 자식 객체 생성시 부모 생성자를 호출하는 생성자
+		
+		// - super() 생성자는 항상 자식 생성자 첫 번째 줄에 작성
+		super();
+		
+		
 		System.out.println("Child1 기본 생성자로 생성");
 	}
 	
 	// 매개 변수 생성자
 	public Child1(String computer) {
+		
+		super("김", "경기도 부천시", 3000, "티코");
+		
 		this.computer = computer;
 		System.out.println("Child1 매개변수  생성자로 생성");
 	}
@@ -38,12 +48,28 @@ public class Child1 extends Parent{
 	// Child1의 필드 + 물려 받은 필드 문자열로 만들어 반환
 	public String informChild1() {
 		
-		return String.format("%s / %s / %d / %s / %s", lastName, address, getMoney(), getCar(), computer);
+		
+		
+		return String.format("%s / %s / %d / %s / %s", 
+				lastName, address, getMoney(), getCar(), computer);
+	}
+	
+	// 부모로 부터 상속 칻은 introduce에서드
+	// 오버라이딩(재정의) 하기
+	
+	public String introduce() {
+		return "Child1 입니다" ;
 	}
 	
 	
+	// Object -> Parent 오버라이딩한 toString()을
+	// 또 오버라이딩 하기
 	
-	
+	@Override
+	public String toString() {
+		return super.toString() + "\nChild1.toString() :" + computer;
+					// Parent.toString()
+	}
 	
 	
 	
