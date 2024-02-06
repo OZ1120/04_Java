@@ -35,7 +35,7 @@ public class Child1 extends Parent{
 	}
 	
 
-	// alt [ +shift}\] + s -> r getter/setter
+	// alt [ +shift] + s -> r getter/setter
 	
 	public String getComputer() {
 		return computer;
