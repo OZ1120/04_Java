@@ -10,17 +10,17 @@ public class Galaxy extends SmartPhone {
 	
 	// 매개 변수 생성자 자동 완성 + super() 매개 변수 생성자
 	// alt [+shift] + s -> o -> 드롭다운에서 부모 생성자 선택 -> Generate
-	public Galaxy(String display, String newsAgency, String ap, int androdVersion) {
+	public Galaxy(String display, String newsAgency, String ap, int androidVersion) {
 		super(display, newsAgency, ap);
-		this.androidVersion = androdVersion;
+		this.androidVersion = androidVersion;
 	}
 
 	// getter / setter
-	public int getAndrodVersion() {
+	public int getAndroidVersion() {
 		return androidVersion;
 	}
 
-	public void setAndrodVersion(int androdVersion) {
+	public void setAndroidVersion(int androdVersion) {
 		this.androidVersion = androdVersion;
 	}
 	
