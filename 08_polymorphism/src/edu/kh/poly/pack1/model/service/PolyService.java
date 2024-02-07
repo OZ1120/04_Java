@@ -237,7 +237,7 @@ public class PolyService {
 	
 	
 	
-	public void printToString(SmartPhone s) {
+	public void printToString(SmartPhone s) { // (자식) 전달받음
 		// 매개 변수가 부모 타입(업캐스팅 적용)
 		
 		System.out.println("[전달 받은 객체의 toString() 출력");
@@ -269,9 +269,9 @@ public class PolyService {
 	 */
 	public void method7() {
 
-		printToString(createPhone(1));
-		printToString(createPhone(2));
-		printToString(createPhone(3));
+		printToString(createPhone(1)); // new SmartPhone()으로 생성된 객체 주소
+		printToString(createPhone(2)); // new Iphone()으로 생성된 객체 주소
+		printToString(createPhone(3)); // new Galaxy()으로 생성된 객체 주소
 		
 	}
 	
@@ -290,13 +290,109 @@ public class PolyService {
 	}
 	
 	
+	/**
+	 * instanaceof연산자
+	 * 
+	 * - 참조변수 instanceof 클래스명
+	 * 
+	 * -> "참조 변수" 참조하는 객체(instance)가
+	 * 		지정된 "클래스"로 만들어진 객체가 맞아?
+	 * 
+	 * 		맞으면 true, 아니면 false 반환
+	 * 
+	 *  + 상속 검사 용도로 사용(부과적인 효과)
+	 *  
+	 */
+	public void method8() {
+		
+		// instanceof 연산자 연습
+		SmartPhone s1 = new SmartPhone();
+		
+		System.out.print("s1 instanceof SmartPhone : ");
+		System.out.println(s1 instanceof SmartPhone); // true
+		
+		System.out.println("s1 instanceof PolyService : error" );
+		//System.out.println(s1 instanceof Polyservice);
+		// -> 상속 관계가 아니라서 instanceof검사 자체를 진행 못함
+		
+		System.out.print("s1 instanceof Iphone : ");
+		System.out.println(s1 instanceof Iphone); // false
+		// -> SmartPhone과 Iphone은 상속 관계가 맞으나
+		// s1이 참조하는 객체가 Iphone 클래스도 만들어진 객체인지
+		// 물어보는 것이기 대문에 결과로 false가 반환
+		
+		
+		System.out.println("---------------------------------------");
+		
+		SmartPhone s2 = new Iphone();
+		
+		System.out.print("s2 instanceof SmartPhone : ");
+		System.out.println(s2 instanceof SmartPhone);
+
+		System.out.print("s2 instanceof Iphone : ");
+		System.out.println(s2 instanceof Iphone); // true
+	}
 	
 	
 	
 	
+	/**
+	 * 객체 배열 + 업캐스팅 + 다운캐스팅 + instanceof 
+	 */
+	public void method9() {
+		
+		// 부모 타입 객체 배열 생성
+		// -> SmartPhone 참조 변수 3칸짜리 배열 생성
+		SmartPhone[] arr = new SmartPhone[3];
+		
+		// 부모 타입 객체 배열 = 요소 별로 부모/자식 객체 초기화
+		//																			 (업캐스팅)
+		// + 메서드 반환항에 다향성)업캐스팅)적용
+		
+		for(int i=0; i<arr.length ; i++) { // 순차접근(반복접근)
+			
+			arr[i] = createPhone(i+1);
+			
+			// arr[0] = createPhone(1) == new SmartPhone();
+			// arr[1] = createPhone(2) == new Iphone();
+			// arr[2] = createPhone(3) == new Galaxy();
+
+		}
+		
+		
+		// 향상된 for문 + instanceof + 다운 캐스팅
+		for(SmartPhone s : arr)  {
+		
+			// S가 참조하고 있는 객체가 Iphone 객체가 맞아?
+			if(s instanceof Iphone) {
+				((Iphone)s).setIosVersion(999);
+			}
+			// s가 참조하고 있는 객체가  Galaxy 객체가 맞아
+			else if(s instanceof Galaxy) {
+				( (Galaxy)s ).setAndroidVersion(333);
+			}
+	
+			else { // Iphone도 Galaxy도 아닌 경우 == SmartPhone
+				s.setDisplay("부모 화면");
+						
+			}
+				
+		}
+		
+		
+		// 향상된 for문 + 매개 변수 다형성(업캐스팅) + 동적 바인딩
+		for(SmartPhone s : arr) {
+			printToString(s);
+		}
+		
+		
+	
+	}
 	
 	
-}//
+	
+	
+}
 
 
 

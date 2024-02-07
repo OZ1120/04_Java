@@ -14,7 +14,9 @@ public class PoluRun {
 //		service.method4();
 //		service.method5();
 //		service.method6();
-		service.method7();
+//		service.method7();
+//		service.method8();
+		service.method9();
 		
 		
 	// 부모 타입 참조 변수를
