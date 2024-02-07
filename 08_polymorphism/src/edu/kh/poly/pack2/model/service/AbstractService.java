@@ -17,7 +17,7 @@ public class AbstractService {
 		
 		
 	}
-	
+
 	
 	/**
 	 * 추상 클래스를 상속 받은 클래스를 이용해 객체 생성

@@ -4,6 +4,7 @@ package edu.kh.poly.pack2.model.dto;
 // - 추상 메서드를 포함하고 있는 클래스
 // - 미완성인 부분을 포함하고 있기 때문에 객체로 생성하는 것이 불가능
 
+
 public abstract class Animal {
 	
 	// 동물의 공통된 필드/ 메서드 작성
