@@ -8,6 +8,11 @@ public class AbstractRun {
 		
 		AbstractService service  = new AbstractService();
 		
+		
+		service.method2();
+		
+		
+		
 	}
 
 }
