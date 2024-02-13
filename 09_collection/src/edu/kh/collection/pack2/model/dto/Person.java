@@ -76,7 +76,27 @@ public class Person {
 	
 	
 	// 동등 비교 : Object.equals() 메서드 오버라이딩
-	
+	@Override
+	public boolean equals(Object obj) {
+		
+		// 현재 객체의 필드와
+		// 전달 받은 obj의 필드가 모두 같을 경우 true, 아니면 false
+		
+		if(obj  == null) return false; // null 비교 불가
+		
+		if (obj == this) return true; // 비교 대상이 현재 객체
+		
+		// 같은 타입이 아니면 비교 불가
+		if(!(obj instanceof Person)) return false;
+		
+		
+		// 다운 캐스팅
+		Person other = (Person)obj;
+		
+		return name.equals(other.name) 
+				&& age == other.age
+				&& gender == other.gender;
+	}
 	
 	
 	
