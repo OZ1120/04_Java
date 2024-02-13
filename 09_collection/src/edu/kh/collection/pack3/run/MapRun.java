@@ -8,7 +8,10 @@ public class MapRun {
 		
 		MapService service = new MapService();
 		
-		service.method1();
+//		service.method1();
+//		service.method2();
+//		service.method3();
+		service.method4();
 		
 	}
 	

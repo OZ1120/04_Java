@@ -2,6 +2,10 @@ package edu.kh.collection.pack3.model.service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import edu.kh.collection.pack2.model.dto.Person;
 
 public class MapService {
 	
@@ -88,8 +92,106 @@ public class MapService {
 	}
 	
 	
+	/**
+	 * Map 요소(Entry) 순차 접근 하기 1
+	 * - Map.keyset() 이용하기
+	 * 
+	 */
+	public void method2() {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("학원", "서울시 중구");
+		map.put("집", "서울시 관악구");
+		map.put("롯데타워", "서울시 송파구");
+		map.put("63빌딩", "서울시 영등포구");
+		
+		// Set<K> Map.keyset() : 
+		// - Map에 Key만 뽑아내서 Set 형태로 만들어 반환
+		Set<String> set = map.keySet();
+		
+		System.out.println("keyset : " + set);
+		
+		// 향상된 for문 + Set
+		for(String key : set) {
+			System.out.printf("%-10s : %s \n", key, map.get(key));
+		}
+		
+	}
 	
 	
+	
+	/**
+	 * Map 요소(Entry) 순차 접근 하기 
+	 * - Map.entrySet() 이용하기
+	 */
+	public void method3() {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("학원", "서울시 중구");
+		map.put("집", "서울시 관악구");
+		map.put("롯데타워", "서울시 송파구");
+		map.put("63빌딩", "서울시 영등포구");
+		
+		Set<Entry<String, String>> entrySet =  map.entrySet();
+		
+		// 향상된 for문 + EntrySet
+		
+		// Entry.getKey() : Key만 얻어오기
+		// Entry.getValue() : Value만 얻어오기
+		for(Entry<String,String> entry : entrySet) {
+			System.out.printf("key : %s , value : %s \n", 
+					entry.getKey(), entry.getValue());
+		}
+		
+	}
+	
+		
+		
+		/**
+		 * Map 활용 하기 - DTO 대체하기
+		 * - 서로 다른 데이터를 한 번에 묶어서 관리해야 하는 경우
+		 */
+		public void method4() {
+			
+			
+			// DTO 이용 방법
+			Person p1 = new Person();
+			p1.setName("홍길동");
+			p1.setAge(15);
+			p1.setGender('남');
+			
+			System.out.printf("이름 : %s, 나이 : %d, 성별 : %c\n", 
+					p1.getName(), p1.getAge(), p1.getGender());
+			
+			
+			System.out.println("---------------------------------------------");
+			
+			// DTO 대신 Map활용하기
+			// -> Key는 무조건 String을 활용하는게 Best
+			// -> Value의 타입이 모두 다름
+			//  ->Object를 부모 타입 참조 변수로 활용
+			// 		--> 다형성 캐스팅(업캐스팅, 동적 바인딩)
+			
+			Map<String, Object > p2 = new HashMap<String, Object>();
+
+			// 데이터 추가
+			p2.put("name"  , "김길순"); 
+			p2.put("age"   , 22); // int -> Integer 변환
+			p2.put("gender", '여'); // char -> Charater 변환
+			
+			// 데이터 얻어오기
+			System.out.printf("이름 : %s, 나이 : %d, 성별 : %c \n", 
+					p2.get("name"), p2.get("age"), p2.get("gender"));
+			
+		}
+	
+		
+		// JS 객체 -> JSON -> Map -> (JACKSON 라이브러리) DTO
+	
+		
+		
+		
 }//
 
 
