@@ -4,6 +4,7 @@ package edu.kh.poly.pack3.model.dto;
 
 //각자 구현한 게산기
 
+
 public class LEJCalculator2 implements Calculator, Machine {
 
 	@Override
