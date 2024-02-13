@@ -261,9 +261,55 @@ public class SetService {
 		System.out.println("금액 입력 : ");
 		int num = sc.nextInt();
 		
-//		num/1000
+		for(int i=0; i < num/1000; i++) {
+			
+			Random random = new Random();
+			
+			Set<Integer> lotto = new TreeSet<Integer>();
+			
+			while(lotto.size()<6) {
+				lotto.add(random.nextInt(45)+1);
+			}
+			
+			System.out.println(i+1+"회 :" + lotto);
+			
+		}
 		
 		
+		
+	}
+	
+	public void lottoNumberGenerator1() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("금액 입력 : ");
+		int amount = sc.nextInt();
+		
+		Random random = new Random();
+		
+		//생성된 로또 번호 묶음을 저장할 List
+		List<Set<Integer>> lottoList = new ArrayList<Set<Integer>>();
+		
+		//초기식 여러개 쓸수 있음
+		for(int i=0, end=amount/1000; i<end; i++) {
+			// for문 반복 될때 마다 새로운 Set객체를 생성
+			Set<Integer> lotto = new TreeSet<Integer>();
+
+			while(lotto.size()<6) {
+				lotto.add(random.nextInt(45)+1);
+			}
+			
+			lottoList.add(lotto); // List에 Set추가(담기)
+			// -> 반복 시 마다
+			// List 각 인덱스에 서로다른 Set 참조 주소가 저장된다!
+			
+		}
+		
+		// 출력용 반복문
+		for(int i=0, size = lottoList.size(); i<size; i++) {
+			System.out.println((i+1) + "회 : " + lottoList.get(i));
+		}
 		
 	}
 	

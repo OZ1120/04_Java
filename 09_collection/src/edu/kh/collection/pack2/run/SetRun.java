@@ -11,7 +11,8 @@ public class SetRun {
 //		service.method2();
 //		service.method3();
 //		service.method4();
-		service.lottoNumberGenerator();
+//		service.lottoNumberGenerator();
+		service.lottoNumberGenerator1();
 		
 	}
 }
