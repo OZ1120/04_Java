@@ -7,6 +7,7 @@ public class SetRun {
 		
 		SetService service = new SetService();
 		
-		service.method1();
+//		service.method1();
+		service.method2();
 	}
 }

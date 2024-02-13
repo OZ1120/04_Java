@@ -1,6 +1,9 @@
 package edu.kh.collection.pack2.model.service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class SetService {
@@ -80,6 +83,83 @@ public class SetService {
 		
 		// 2. int size() : set에 저장된 객체(참조변수)의 수 반환
 		System.out.println("set.size() : " + set.size());
+		
+		
+		// 3. boolean remove(E e) : 
+		// 전달 받은 e를 Set에서 제거 - 제거 성공 true, 없으면 false
+		
+		System.out.println(set.remove("배달의민족"));
+		System.out.println(set.remove("유플러스"));
+		System.out.println(set);
+		
+		
+		// 4. boolean contains(E e) : 
+		// 전달 받은 e가 Set에 있으면 true, 없으면 false
+		
+		System.out.println("쿠팡 있는지 확인 : "+set.contains("쿠팡"));
+		System.out.println("삼성 있는지 확인 : "+set.contains("삼성"));
+		
+		// 5. void clear() : Set에 저장된 내용 모두 삭제
+		set.clear();
+		
+		// 6. boolean isEmpty() : 비어있으면 true, 아니면 false
+		System.out.println("비어있음?? : " + set.isEmpty());
+		
+	}
+	
+	/**
+	 * Set에 저장된 요소(객체)를 꺼내는 방법
+	 * 1. Iterator (반복자) 이용
+	 * 2. List로 변환
+	 * 3. 향상된 for문 이용
+	 */
+	public void method2() {
+		
+		Set<String> set = new HashSet<String>();
+		
+		set.add("몽쉘");
+		set.add("꼬북칩");
+		set.add("쿠쿠다스");
+		set.add("빈츠");
+		set.add("포카칩");
+		
+		// 1. Iterator(반복자)
+		// - 컬렉션 객체에 저장된 요소를
+		//	 하나씩 순차 접근 하는 객체
+		
+		// Iterator Set.iterator() : 
+		// - 현재 Set을 순차 접근할 수 있는 Iterator 객체 반환
+		Iterator<String> it = set.iterator();
+		
+		// boolean Iterator.hasNext : 
+		// 다음 순차 접근할 요소가 있으면 true, 없으면 false
+		
+		System.out.println("[Iterator]");
+		while(it.hasNext()) {
+			// 다음 요소가 있으면 반복, 없으면 멈춤
+			
+			// E Iterator.next() : 다음 요소를 꺼내와 반환
+			String temp = it.next();
+			System.out.println(temp);
+		}
+		
+		System.out.println("--------------------------------------");
+		System.out.println("[List로 변환]");
+		
+		// Set에 저장된 객체를 이용해서 List를 생성
+		List<String> list = new ArrayList<String>(set);
+		
+		// 일반 for문
+		for(int i=0; i < list.size() ;i++) {
+			System.out.println(list.get(i));
+		}
+		
+		System.out.println("-----------------------------------------");
+		System.out.println("[향상된 for문]");
+		
+		for(String snack : set) {
+			System.out.println(snack);
+		}
 		
 		
 	}
