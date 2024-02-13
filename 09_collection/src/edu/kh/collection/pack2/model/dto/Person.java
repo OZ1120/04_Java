@@ -84,7 +84,7 @@ public class Person {
 		
 		if(obj  == null) return false; // null 비교 불가
 		
-		if (obj == this) return true; // 비교 대상이 현재 객체
+		if(obj == this) return true; // 비교 대상이 현재 객체
 		
 		// 같은 타입이 아니면 비교 불가
 		if(!(obj instanceof Person)) return false;

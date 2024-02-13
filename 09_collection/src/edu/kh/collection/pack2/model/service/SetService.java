@@ -37,7 +37,7 @@ public class SetService {
 	 * - 사용 조건 1 : 객체에 equals()가 오버라이딩 되어있어야함
 	 * - 사용 조건 2 : 객체에 hashCode()가 오버라이딩 되어있어야함
 	 * 
-	 * -> String, Intefer 등 자바에서 제공하는 객체는
+	 * -> String, Integer 등 자바에서 제공하는 객체는
 	 *  모두 오버라이딩 되어있는 상태!!
 	 */
 	public void method1() { 
@@ -189,8 +189,8 @@ public class SetService {
 		System.out.println("p4 : " + p4.hashCode());
 		
 		// A.equals(B) : A와 B가 가지고 있는 필드 값이 같다면 true.
-		System.out.println(p1.equals(p2));
-		System.out.println(p1.equals(p3));
+		System.out.println("p1.equals(p2) : "+p1.equals(p2));
+		System.out.println("p1.equals(p3) : "+p1.equals(p3));
 
 		
 		// Set 중복 제거 확인
