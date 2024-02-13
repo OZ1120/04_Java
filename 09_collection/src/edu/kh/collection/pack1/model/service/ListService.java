@@ -6,6 +6,7 @@ import java.util.Scanner;
 import edu.kh.collection.pack1.model.dto.Book;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 // 컬렉션 프레임워크 : Java에서 자료구조를 만들어서 모아둔 것
 // (java.util에 있음)
@@ -113,7 +114,7 @@ public class ListService {
 		
 		// 컬렉셔의 장점 중 "여러 타입 저장 가능"이
 		// 코드 길이를 늘리는 주범 !!!
-		// -> 타입을 하나로 제한(제네길) -> 코드 길이 감솔
+		// -> 타입을 하나로 제한(제네릭) -> 코드 길이 감소
 		
 		// String 타입으로 제한된 ArrayList 객체 생성
 		List<String> strList = new ArrayList<String>();
@@ -184,8 +185,17 @@ public class ListService {
 	 */
 	public void bookManage() {
 		
+		/* ArrayList : 배열 형태의 리스트
+		 * 장점 : 검색이 빠름
+		 * 단점 : 중간 삽입, 제거가 느림
+		 * 
+		 * LinkedList : 연결된 형태의 리스트(기차)
+		 * 장점 : 중간 삽입, 제거가 빠름
+		 * 단점 : 검색이 느림
+		 */
 		
-		List<Book> bookList = new ArrayList<Book>()	;
+//		List<Book> bookList = new ArrayList<Book>()	;
+		List<Book> bookList = new LinkedList<Book>()	;
 		
 		Scanner sc = new Scanner(System.in);
 		
