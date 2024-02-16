@@ -178,8 +178,8 @@ public class TodoListDAOImpl implements TodoListDAO {
 		todo.setDetail(detail);
 				
 		// index 번째 요소의 complete, regDate 값을 얻어와 todo에 세팅
-		todo.setComplete(todoList.get(index).isComplete());
-		todo.setRegDate(todoList.get(index).getRegDate());
+		todo.setComplete( todoList.get(index).isComplete() );
+		todo.setRegDate ( todoList.get(index).getRegDate() );
 		
 		// E List.set(int index, E e) : index번째 요소를 매개변수 e로 바꾸고
 		// 															이전 요소를 반환(없으면 null)

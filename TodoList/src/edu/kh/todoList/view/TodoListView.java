@@ -239,7 +239,7 @@ public class TodoListView {
 		int index = Integer.parseInt(br.readLine());
 		
 		// 상세 조회 서비스 재활용 (인덱스 범위 초과 시 null 반환)
-		String todoDetail = service.todoDelete(index);
+		String todoDetail = service.todoDetailView(index);
 		
 		if(todoDetail == null) {
 			System.out.println("### 인덱스가 존재 하지 않습니다 ###");
