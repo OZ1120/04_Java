@@ -1,5 +1,7 @@
 package edu.kh.test2;
 // 2월 19일 시험
+// ArrayList 뭐임
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,12 @@ public class test2 {
 		System.out.print("ip 입력 : ");
 		String ip = sc.next();
 		
+		for(int i=0; i<ipInfoList.size(); i++) {
+			if(ipInfoList.get(i) == ip) {
+				// ipInfoList의 ip랑 얻어온 ip비교해야되는디
+				
+			}
+		}
 //		for(int i=0; i<ipInfoList.size(); i++) {
 //			if(ipInfoList.get(i) == ip) {
 //				System.out.println(ipInfoList.get(i));
