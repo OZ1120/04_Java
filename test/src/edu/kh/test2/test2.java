@@ -23,17 +23,11 @@ public class test2 {
 		String ip = sc.next();
 		
 		for(int i=0; i<ipInfoList.size(); i++) {
-			if(ipInfoList.get(i) == ip) {
-				// ipInfoList의 ip랑 얻어온 ip비교해야되는디
-				
+			if(ipInfoList.get(i).getIp().equals(ip)) {
+				System.out.println(ipInfoList.get(i));
+				break;
 			}
 		}
-//		for(int i=0; i<ipInfoList.size(); i++) {
-//			if(ipInfoList.get(i) == ip) {
-//				System.out.println(ipInfoList.get(i));
-//				break;
-//			}
-//		}
 		System.out.println("일치하는 ip 사용자가 없습니다");
 	}
 }
