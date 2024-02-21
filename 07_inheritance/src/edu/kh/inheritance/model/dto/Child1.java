@@ -54,7 +54,7 @@ public class Child1 extends Parent{
 				lastName, address, getMoney(), getCar(), computer);
 	}
 	
-	// 부모로 부터 상속 칻은 introduce에서드
+	// 부모로 부터 상속 받은 introduce 메서드
 	// 오버라이딩(재정의) 하기
 	
 	public String introduce() {
